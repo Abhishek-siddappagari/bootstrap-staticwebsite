@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <style>
+        .nav-link {
+            color: rgb(219, 203, 203);
+        }
+
+        h3.brand {
+            font-weight: 300;
+            color: #fff;
+        }
+
+
+        .search {
+            margin: 20px;
+        }
+
+
+
+        .search>div {
+            display: inline-block;
+            position: relative;
+        }
+
+        .search>div:after {
+            content: "";
+            background: rgba(255, 255, 255, 0.505);
+            width: 3px;
+            height: 16px;
+            position: absolute;
+            top: 20px;
+            transform: rotate(135deg);
+        }
+
+        .search>div>input {
+            color: rgba(214, 207, 207, 0.505);
+            font-size: 16px;
+            background: transparent;
+            width: 25px;
+            height: 25px;
+            padding: 10px;
+            border: solid 3px rgba(255, 255, 255, 0.502);
+            outline: none;
+            border-radius: 35px;
+            transition: width 0.5s;
+        }
+
+        .search>div>input::placeholder {
+            color: #fff;
+            opacity: 0;
+            transition: opacity 150ms ease-out;
+        }
+
+        .search>div>input:focus::placeholder {
+            opacity: 1;
+        }
+
+        .search>div>input:focus,
+        .search>div>input:not(:placeholder-shown) {
+            width: 250px;
+        }
+
+        .nav-pills .nav-link.bt.nav-link.bt.active,
+        .nav-pills .show>.nav-link.nav-link.bt {
+            color: #000;
+            background-color: #1beae366;
+        }
+
+        .nav-link.bt {
+            color: #000;
+        }
+
+        /* feTurbulence */
+        .navbar-brand {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .nav-pills .nav-link.bt.nav-link.bt.active,
+        .nav-pills .show>.nav-link.nav-link.bt {
+            color: #000;
+            background-color: #1beae366;
+        }
+
+        .nav-link.bt {
+            color: #000;
+        }
+
+
+        /* ftr  */
+
+
+
+        .footer-distributed {
+            background: rgb(0, 0, 0);
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+            box-sizing: border-box;
+            width: 100%;
+            text-align: left;
+            font: bold 16px sans-serif;
+            padding: 55px 50px;
+        }
+
+        .footer-distributed .footer-left,
+        .footer-distributed .footer-center,
+        .footer-distributed .footer-right {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        /* Footer left */
+
+        .footer-distributed .footer-left {
+            width: 40%;
+        }
+
+        /* The company logo */
+
+        .footer-distributed h3 {
+            color: #ffffff;
+            /* font: normal 36px 'Open Sans', cursive; */
+            margin: 0;
+        }
+
+        .footer-distributed h3 span {
+            color: lightseagreen;
+        }
+
+        /* Footer links */
+
+        .footer-distributed .footer-links {
+            color: #ffffff;
+            margin: 20px 0 12px;
+            padding: 0;
+        }
+
+        .footer-distributed .footer-links a {
+            display: inline-block;
+            line-height: 1.8;
+            font-weight: 400;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .footer-distributed .footer-company-name {
+            color: rgb(253, 248, 248);
+            font-size: 14px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        /* Footer Center */
+
+        .footer-distributed .footer-center {
+            width: 35%;
+        }
+
+        .footer-distributed .footer-center i {
+            background-color: #33383b;
+            color: #ffffff;
+            font-size: 25px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 42px;
+            margin: 10px 15px;
+            vertical-align: middle;
+        }
+
+        .footer-distributed .footer-center i.fa-envelope {
+            font-size: 17px;
+            line-height: 38px;
+        }
+
+        .footer-distributed .footer-center p {
+            display: inline-block;
+            color: #ffffff;
+            font-weight: 400;
+            vertical-align: middle;
+            margin: 0;
+        }
+
+        .footer-distributed .footer-center p span {
+            display: block;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .footer-distributed .footer-center p a {
+            color: lightseagreen;
+            text-decoration: none;
+            ;
+        }
+
+        .footer-distributed .footer-links a:before {
+            content: "|";
+            font-weight: 300;
+            font-size: 20px;
+            left: 0;
+            color: #fff;
+            display: inline-block;
+            padding-right: 5px;
+        }
+
+        .footer-distributed .footer-links .link-1:before {
+            content: none;
+        }
+
+        /* Footer Right */
+
+        .footer-distributed .footer-right {
+            width: 20%;
+        }
+
+        .footer-distributed .footer-company-about {
+            line-height: 20px;
+            color: #92999f;
+            font-size: 13px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .footer-distributed .footer-company-about span {
+            display: block;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .footer-distributed .footer-icons {
+            margin-top: 25px;
+        }
+
+        .footer-distributed .footer-icons a {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            background-color: #33383b;
+            border-radius: 2px;
+
+            font-size: 20px;
+            color: #ffffff;
+            text-align: center;
+            line-height: 35px;
+
+            margin-right: 3px;
+            margin-bottom: 5px;
+        }
+
+        /* If you don't want the footer to be responsive, remove these media queries */
+
+        @media (max-width: 880px) {
+
+            .footer-distributed {
+                font: bold 14px sans-serif;
+            }
+
+            .footer-distributed .footer-left,
+            .footer-distributed .footer-center,
+            .footer-distributed .footer-right {
+                display: block;
+                width: 100%;
+                margin-bottom: 40px;
+                text-align: center;
+            }
+
+            .footer-distributed .footer-center i {
+                margin-left: 0;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark" style="background-color:#000 ;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <h3 class="brand">Techpro</h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="careers.html">Careers</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="services.html" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="services.html">Technology Consulting</a></li>
+                            <li><a class="dropdown-item" href="services.html">Application Services</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="services.html">Data and analytics</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="signin.html">SIGN IN</a>
+                    </li>
+                </ul>
+
+                <div class="flexbox">
+                    <div class="search">
+                        <div>
+                            <input type="text" placeholder="Search..." required>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section class="p-3 m-0 border-0 bd-example">
+        <div class="row">
+            <div class="col-4">
+                <nav id="navbar-example" class="h-100 flex-column align-items-stretch pe-4 border-end">
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link bt" href="#item-1">Technology Consulting </a>
+
+
+                        <a class="nav-link bt" href="#item-2">Application Services</a>
+                        <a class="nav-link bt" href="#item-3">Data and analytics </a>
+
+                    </nav>
+                </nav>
+            </div>
+
+            <div class="col-8">
+                <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true"
+                    class="scrollspy-example-2" tabindex="0">
+                    <div id="item-1">
+                        <h4>Technology Consulting</h4>
+                        <h6>Our Technology Strategy & Advisory practice helps architect and realize exceptional business
+                            value from
+                            technology.</h6>
+                        <p>With technology now critical to helping drive corporate strategy and ensuring its success,
+                            today’s CIO is
+                            fast becoming the new corporate “rock star,” as well as an advocate for change, corporate
+                            transformation
+                            and the realities of what new technologies can do. But technology investments don’t always
+                            achieve the
+                            expected benefits, and companies are finding that harnessing technology to fuel innovation
+                            is a major
+                            challenge.
+
+                            Organizations therefore need a fundamentally different approach to building and managing
+                            technology and
+                            large-scale transformation—one better suited to the ever-changing reality of today’s
+                            business landscape.
+
+                            That’s where we come in. Accenture’s Technology Strategy & Advisory practice helps
+                            organizations harness
+                            technology and innovation to shape their technology visions, execute their digital
+                            transformation
+                            journeys, and reinvent their businesses to create exceptional, sustainable value from their
+                            technology
+                            investments..</p>
+                    </div>
+
+                    <div id="item-2">
+                        <h4>Application Services</h4>
+                        <h6>Accelerate innovation and growth with technology at the core to power 360° value at scale.
+                        </h6>
+                        <p>Innovation-led application services
+                            For most companies, complex application landscapes with a mix of legacy systems, digital and
+                            SaaS consume
+                            too large a share of IT resources and restrict their ability to drive growth.
+
+                            Our application services help you reimagine your application landscape, with speed and
+                            agility, while
+                            continuously innovating to realize business value.End-to-end application services
+                            From the development of new applications, through modernization, management and maintenance,
+                            we cover all
+                            stages of the application lifecycle.</p>
+                    </div>
+                    <div id="item-3">
+                        <h4>Data and analytics services</h4>
+                        <h6>Unlock powerful insights by tapping into data you didn’t even know you had.</h6>
+                        <p>Discover your data's destiny
+                            Imagine a steady stream of insights to help you make better business decisions. Data,
+                            analytics and AI
+                            have opened the door to entirely new possibilities.
+
+                            But if your organization’s data is fragmented or low quality, it can’t be mobilized. You
+                            need to reimagine
+                            existing processes to ensure data is transparent, trustworthy and accessible at speed. Only
+                            then can data
+                            be used to maximize your technology and AI investments.
+
+                            Accenture’s analytics services and solutions can help any organization grow and
+                            differentiate themselves
+                            against competition. We identify use cases that can deliver against your business priorities
+                            and create
+                            analytics solutions with the right talent and technologies to suit your needs. Your data’s
+                            destiny is one
+                            that can be leveraged to lift performance, resilience, and growth for years to come.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+
+            <h3>Techpro</h3>
+
+            <p class="footer-links">
+                <a href="index.html" class="link-1">Home</a>
+
+                <a href="careers.html">Careers</a>
+
+                <a href="services.html">Services</a>
+
+                <a href="signin.html">Sign in</a>
+
+                <a href="#">Contact</a>
+            </p>
+
+            <p class="footer-company-name">Techpro © 2022</p>
+        </div>
+
+        <div class="footer-center">
+
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+1.555.555.5555</p>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:support@company.com">support@techpro.com</a></p>
+            </div>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p class="footer-company-about">
+                <span>About the company</span>
+                Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus
+                vehicula sit amet.
+            </p>
+
+
+            <div class="footer-icons">
+
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- End Example Code -->
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
